@@ -5,12 +5,11 @@ function Header(props) {
     return (
       
         <header>
-      <Link to="">
+      <Link to="/">
         <div className="header__logo">
           
             <img src="img/header-logo.png" alt="header-logo" width={40} height={40} />
-          
-          
+        
           <div className="header__text">
           <h3 className="header__title">REACT SNEAKERS</h3>
           <p className="header__desk">Магазин лучших кроссовок</p>
@@ -30,7 +29,7 @@ function Header(props) {
               {`${props.totalPrice} руб.`}
               </a>
             </li>
-            <Link to="favorites">
+            <Link to="/favorites">
             <li className="header__item"><a href="#" className="header__link">
             <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#clip0_60_590)">
