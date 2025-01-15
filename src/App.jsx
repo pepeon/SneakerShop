@@ -2,7 +2,7 @@ import axios from 'axios'
 import Drawer from './components/Drawer'
 import Header from './components/Header'
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import {BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './components/Pages/Home'
 import Favorites from './components/Pages/Favorites'
 import OrderList from './components/Pages/OrderList'
@@ -114,32 +114,35 @@ function App() {
 
       <Header onClickCart={() => setIsCartOpenned(true)}
               totalPrice={totalPrice}/>
+
+<BrowserRouter basename='/SneakerShop'></BrowserRouter>
   <Routes>
 
-  <Route path="" exact element={
-    <Home
-     title={"Все кроссовки"}
-     items={items}
-     isLoading={isLoading}
-     cartItems={cartItems}
-     favorites={favorites}
-     />}/>
-  
-  <Route path="favorites" exact element={
-    <Favorites 
-      title={"Закладки"}
-      items={favorites}
-      cartItems={cartItems}
-      favorites={favorites}
-      isLoading={isLoading}
-      />
-  }/>
+<Route path="" exact element={
+  <Home
+   title={"Все кроссовки"}
+   items={items}
+   isLoading={isLoading}
+   cartItems={cartItems}
+   favorites={favorites}
+   />}/>
+
+<Route path="favorites" exact element={
+  <Favorites 
+    title={"Закладки"}
+    items={favorites}
+    cartItems={cartItems}
+    favorites={favorites}
+    isLoading={isLoading}
+    />
+}/>
 
 <Route path="orderlist" exact element={
-    <OrderList
-      title={"Заказы"}
-    />}/>
+  <OrderList
+    title={"Заказы"}
+  />}/>
 </Routes>
+  
       
 
     </main>
