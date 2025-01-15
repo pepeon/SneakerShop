@@ -16,10 +16,31 @@ function Drawer({onClose, cartItems, removeItem, totalPrice, opened}) {
   const onCloseOverlay = (e) => {
     e.target.classList[0] === style.overlay && onClose()
   }
-  
+  const ScrollWidth = window.innerWidth - document.documentElement.clientWidth;
+
   React.useEffect(() => {
-    opened ? document.body.classList.add('overflow-hidden') :
-    document.body.classList.remove('overflow-hidden')
+    const scrollTop = window.scrollY; 
+    if (opened) {
+      
+  
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollTop}px`;
+      
+      console.log(ScrollWidth)
+      document.body.classList.add('overflow-hidden')
+      document.body.style.paddingRight = `${ScrollWidth}px`;
+      document.body.style.width = '100%'
+
+    } else {
+      document.body.classList.remove('overflow-hidden')
+      document.body.style.paddingRight = ``;
+      const scrollTop = Math.abs(parseInt(document.body.style.top || '0', 10));
+      document.body.style.position = '';
+      document.body.style.top = '';
+      window.scrollTo(0, scrollTop);
+    
+    }
+
   }, [opened])
   
   const onComplete = () => {

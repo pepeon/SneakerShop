@@ -1,7 +1,7 @@
 .drawer {
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   right: 0;
   width: 385px;
   height: 100vh;
@@ -18,11 +18,11 @@
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   background: #0000006a;
   left: 0;
   top: 0;
-  z-index: 1;
+  z-index: 4;
   width: 100%;
   height: 100vh;
   visibility: hidden;
