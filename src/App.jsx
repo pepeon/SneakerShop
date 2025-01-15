@@ -116,7 +116,7 @@ function App() {
               totalPrice={totalPrice}/>
   <Routes>
 
-  <Route path="/" exact element={
+  <Route path="" exact element={
     <Home
      title={"Все кроссовки"}
      items={items}
@@ -125,7 +125,7 @@ function App() {
      favorites={favorites}
      />}/>
   
-  <Route path="/favorites" exact element={
+  <Route path="favorites" exact element={
     <Favorites 
       title={"Закладки"}
       items={favorites}
@@ -135,7 +135,7 @@ function App() {
       />
   }/>
 
-<Route path="/orderlist" exact element={
+<Route path="orderlist" exact element={
     <OrderList
       title={"Заказы"}
     />}/>
