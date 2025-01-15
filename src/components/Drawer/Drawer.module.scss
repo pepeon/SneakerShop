@@ -1,0 +1,41 @@
+.drawer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  width: 385px;
+  height: 100vh;
+  z-index: 5;
+  background: white;
+  padding: 30px;
+  transform: translateX(100%);
+  transition: transform .2s ease-in-out;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+}
+
+.overlay {
+  position: absolute;
+  background: #0000006a;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .1s ease-out, visibility .1s ease-out;
+  overflow: hidden;
+}
+
+.opened {
+  visibility: visible;
+  opacity: 1;
+
+  .drawer {
+    transform: translate(0)
+  }
+}
