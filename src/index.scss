@@ -451,7 +451,7 @@ header {
   }
   header {
   height: 100px;
-  width: 100vw;
+  width: 100%;
   position: sticky;
   top: 0;
   left: 0;
@@ -468,7 +468,6 @@ header {
 
   .header__burger {
     display: flex;
-    margin-right: 30px;
   }
   .header__list {
       display: none;
@@ -490,6 +489,19 @@ header {
   .content__cards {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 6px;
+  }
+
+}
+@media (max-width: 500px) {
+  .container {
+    padding: 0 20px;
+  }
+  .content__orderList .content__orderCards {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .content__cards {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    row-gap: 30px;
   }
 
 }
