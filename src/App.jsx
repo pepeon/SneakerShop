@@ -114,8 +114,6 @@ function App() {
 
       <Header onClickCart={() => setIsCartOpenned(true)}
               totalPrice={totalPrice}/>
-
-<BrowserRouter basename='/SneakerShop'></BrowserRouter>
   <Routes>
 
 <Route path="" exact element={
