@@ -14,6 +14,7 @@ function Header(props) {
 
       burgerMenu.classList.remove('burger__menu-clicked')
       burger.classList.remove('burger__clicked')
+      document.body.classList.remove('overflow-hidden')
 
      }
      
