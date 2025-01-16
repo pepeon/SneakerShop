@@ -509,8 +509,15 @@ header {
 
 }
 @media (max-width: 500px) {
+  .burger__menu {
+    left: -20px;
+    width: calc(100% + 40px);
+    li {
+      margin-left: 40px;
+    }
+  }
   .container {
-    padding: 0 20px;
+    padding: 0 20px 30px 20px;
   }
   .content__orderList .content__orderCards {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
