@@ -204,6 +204,9 @@ header {
     cursor: pointer;
   }
 }
+.cart__total {
+  padding-bottom: 20px;
+}
 
 .cartItem__desk {
   display: flex;
@@ -308,6 +311,7 @@ header {
   flex-direction: column;
   gap: 10px;
   justify-content: center;
+  padding-bottom: 30px;
 
   h3 {
     font-weight: 600;
@@ -391,16 +395,19 @@ header {
 .burger__menu {
   display: none;
   position: absolute;
-  width: 100vw;
+  width: 100%;
   top: 0;
-  left: 0;
+  left: -20px;
   height: 100vh;
+  width: calc(100% + 40px);
   transform: translateY(-100%);
-  margin: 0 -10px;
   z-index: 3;
   visibility: hidden;
   background-color: #f7f7f7;
   transition: transform .2s ease-in-out, visibility .2s ease-in-out;
+  li {
+    margin-left: 20px;
+  }
 }
 .burger__menu-clicked {
   transform: translateY(0);
@@ -411,6 +418,7 @@ header {
 .cart__closeBtn {
   cursor: pointer;
 }
+
 @media (max-width: 1024px) {
   body {
     margin: 0;
@@ -420,27 +428,35 @@ header {
     padding: 0px 12px 40px 10px;
     position: relative;
   }
-  .burger__menu {
-    display: block;
-  }
+
   .container {
     padding: 40px;  
   }
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding-top: 0;
+  }
   .content__card {
     padding-top: 60px;
   }
   
-
+  .burger__menu {
+    display: block;
+    left: -40px;
+    width: calc(100% + 80px);
+    li {
+      margin-left: 80px;
+    }
+  }
   
   .burger__list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 30%;
+    width: 34%;
     margin: 0 auto;
     gap: 20px;
     height: 100%;
@@ -498,9 +514,10 @@ header {
   }
   .content__orderList .content__orderCards {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    row-gap: 30px;
   }
   .content__cards {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     row-gap: 30px;
   }
 

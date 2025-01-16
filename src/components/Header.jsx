@@ -21,11 +21,16 @@ function Header(props) {
 
     const onBurgerClicked = () => {
       
-
+      document.body.classList.toggle('overflow-hidden')
       burger.classList.toggle('burger__clicked')
       burgerMenu.classList.toggle('burger__menu-clicked')
     }
-  
+    
+    const cartClick = () => {
+      
+      props.onClickCart()
+    }
+
     return (
         
 
@@ -33,7 +38,7 @@ function Header(props) {
             <div className="burger__menu">
 
               <ul className="burger__list">
-              <li className="header__item"><a href="#" className="header__link" onClick={props.onClickCart}>
+              <li className="header__item"><a href="#" className="header__link" onClick={cartClick}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M7.54548 18.1818C7.99735 18.1818 8.36366 17.8155 8.36366 17.3636C8.36366 16.9118 7.99735 16.5455 7.54548 16.5455C7.09361 16.5455 6.72729 16.9118 6.72729 17.3636C6.72729 17.8155 7.09361 18.1818 7.54548 18.1818Z" stroke="#9B9B9B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     <path d="M16.5455 18.1818C16.9973 18.1818 17.3637 17.8155 17.3637 17.3636C17.3637 16.9118 16.9973 16.5455 16.5455 16.5455C16.0936 16.5455 15.7273 16.9118 15.7273 17.3636C15.7273 17.8155 16.0936 18.1818 16.5455 18.1818Z" stroke="#9B9B9B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
